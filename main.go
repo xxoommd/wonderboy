@@ -9,11 +9,12 @@ import (
 func main() {
 	var wg sync.WaitGroup
 	start := time.Now().UnixNano()
-	for i := 0; i < 32; i++ {
+	for i := 0; i < 2048; i++ {
 		wg.Add(1)
-		index := i
+		// index := i
 		go func() {
-			fmt.Printf("[Goroutine:%d] fib(32)=%d \n", index, fib(43))
+			fib(33)
+			// fmt.Printf("[Goroutine:%d] fib(32)=%d \n", index, fib(32))
 			wg.Done()
 		}()
 	}
