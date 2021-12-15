@@ -9,7 +9,7 @@ import (
 func main() {
 	var wg sync.WaitGroup
 	start := time.Now().UnixNano()
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 32; i++ {
 		wg.Add(1)
 		index := i
 		go func() {
